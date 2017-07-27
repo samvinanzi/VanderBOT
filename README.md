@@ -18,7 +18,7 @@ This code runs on Python 2.7. In addition, the following libraries are required:
 | Library | GitHub URL |
 | ------ | ------ |
 | Numpy | https://github.com/numpy/numpy.git |
-| Bayesian Belief Networks | https://github.com/samvinanzi/bayesian-belief-networks.git] |
+| Bayesian Belief Networks | https://github.com/samvinanzi/bayesian-belief-networks.git |
 | OpenCV2 with "face" extra module | https://github.com/opencv/opencv_contrib.git |
 | qi | https://github.com/aldebaran/libqi.git |
 
@@ -35,9 +35,9 @@ Some robotic behaviours (as methods *look_A()* and *look_B()* from class `robot.
 Printable images of the experiment mat and the marker are available for download and print. Although the table mat is not mandatory, it is recommended as it serves as a visual guide for both the pointers and the experimenters.
 Any kind of NAOmarker can be used in place of the one provided.
 
-[mat](/experimental_setup/Experimental%20setup.jpg)
+![Tabletop mat](/experimental_setup/Experimental%20setup.jpg)
 
-[marker](/experimental_setup/Marker.png)
+![Marker](/experimental_setup/Marker.png)
 
 A3 print size is recommended for the table mat.
 
