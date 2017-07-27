@@ -35,15 +35,14 @@ Some robotic behaviours (as methods *look_A()* and *look_B()* from class `robot.
 Printable images of the experiment mat and the marker are available for download and print. Although the table mat is not mandatory, it is recommended as it serves as a visual guide for both the pointers and the experimenters.
 Any kind of NAOmarker can be used in place of the one provided.
 
-Tabletop mat: 
+**Tabletop mat (recommended print size is A3):** 
 
 ![Tabletop mat](/experimental_setup/Experimental%20setup.jpg)
 
-Marker:
+**Marker:**
 
 ![Marker](/experimental_setup/Marker.png)
 
-A3 print size is recommended for the table mat.
 
 # Usage
 
