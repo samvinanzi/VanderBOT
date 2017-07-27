@@ -1,7 +1,7 @@
 # VanderBOT
 Pepper implementation of the cognitive architecture for Trust and Theory of Mind in humanoid robots applied to the developmental psychological experiment designed by Vanderbilt et al. (2011).
 
-In this experiment, a robot will interact with one or more informants in a sticker finding game and it will progressively learn predict their trustworthiness. For more details, please refer to Vinanzi et. al. (*in progress*).
+In this experiment, a robot will interact with one or more informants in a sticker finding game and it will progressively learn to predict their trustworthiness. For more details, please refer to Vinanzi et. al. (*in progress*).
 
 # Features
 
