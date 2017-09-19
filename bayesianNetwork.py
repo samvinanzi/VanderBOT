@@ -1,7 +1,7 @@
 import copy
 import os
 from math import log
-from random import randint, shuffle
+from random import randint, shuffle, choice
 
 from bayesian.bbn import *
 from bayesian.utils import make_key
@@ -103,7 +103,11 @@ class BeliefNetwork:
             if outputs['robot_action', 'A'] > outputs['robot_action', 'B']:
                 return 'A'
             else:
-                return 'B'
+                # If probability is 0.5, then picks a random choice
+                if outputs['robot_action', 'A'] == outputs['robot_action', 'B']:
+                    return choice(['A', 'B'])
+                else:
+                    return 'B'
 
     # Belief Estimation
     # Sets robot_belief and robot_action as evidence and infers informant_belief
@@ -117,11 +121,18 @@ class BeliefNetwork:
             if outputs['informant_belief', 'A'] > outputs['informant_belief', 'B']:
                 predicted_behaviour.append('A')
             else:
-                predicted_behaviour.append('B')
+                # If probability is equals, pick at random
+                if outputs['informant_belief', 'A'] == outputs['informant_belief', 'B']:
+                    predicted_behaviour.append(choice(['A', 'B']))
+                else:
+                    predicted_behaviour.append('B')
             if outputs['informant_action', 'A'] > outputs['informant_action', 'B']:
                 predicted_behaviour.append('A')
             else:
-                predicted_behaviour.append('B')
+                if outputs['informant_action', 'A'] == outputs['informant_action', 'B']:
+                    predicted_behaviour.append(choice(['A', 'B']))
+                else:
+                    predicted_behaviour.append('B')
             return predicted_behaviour
 
     # Updates in real-time the belief
@@ -208,11 +219,11 @@ class BeliefNetwork:
         entropy_diff = self.entropy_difference(episode)
         time_fading = (time - episode.time + 1) / mitigation_factor
         consistency = entropy_diff / time_fading
-        if 0.0 <= consistency < 0.02:
+        if 0.0 <= consistency <= 0.005:
             duplication_value = 0
-        elif 0.02 <= consistency < 0.2:
+        elif 0.005 < consistency <= 0.3:
             duplication_value = 1
-        elif 0.2 <= consistency < 0.5:
+        elif 0.3 < consistency <= 0.6:
             duplication_value = 2
         else:
             duplication_value = 3
@@ -260,3 +271,16 @@ class BeliefNetwork:
             # Generate the symmetric episode
             output_dataset.append(sample.generate_symmetric())
         return BeliefNetwork(name, output_dataset)
+
+    # Returns the reliability of the network as a real value between -1 and +1. Negative values denote degrees of
+    # unreliability and vice versa.
+    def get_reliability(self):
+        # Evaluate the trustworthiness of the network (as for Belief Estimation)
+        be_query = self.bn.query(robot_belief='A', robot_action='A')
+        x = be_query['informant_action', 'A']
+        # Scale it to [-1, +1]
+        a = -1
+        b = 1
+        min = 0.25
+        max = 0.75
+        return ((b - a) * (x - min)) / (max - min) + a
