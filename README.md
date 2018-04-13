@@ -1,5 +1,5 @@
 # VanderBOT
-Pepper implementation of the cognitive architecture for Trust and Theory of Mind in humanoid robots applied to the developmental psychological experiment designed by Vanderbilt et al. (2011).
+Pepper implementation of the cognitive architecture for Trust and Theory of Mind in humanoid robots applied to the developmental psychology experiment designed by Vanderbilt et al. (2011).
 
 In this experiment, a robot will interact with one or more informants in a sticker finding game and it will progressively learn to predict their trustworthiness. For more details, please refer to Vinanzi et. al. (*in progress*).
 
@@ -10,6 +10,10 @@ In this experiment, a robot will interact with one or more informants in a stick
 - Developmental Bayesian Model of Trust (Patacchiola and Cangelosi, 2016) used as a belief network;
 - Maximum Likelihood Estimation and Message Passing Algorithm for bayesian learning and inference;
 - Custom particle-filter-inspired algorithm for artificial episodic memory;
+
+# Video
+
+https://www.youtube.com/watch?v=ZBBtu1PkNCg
 
 # Requirements
 
@@ -27,10 +31,7 @@ This software can operate in a simulated virtual environment, provided a camera 
 # Experimental Setup
 
 This module has been written for a SoftBank Pepper robot.
-
-*TODO exact measures*
-
-Some robotic behaviours (as methods *look_A()* and *look_B()* from class `robot.py`) should be revised in case of any changes to the robot or the experimental setup.
+The original experimental setup involved a table measuring 67.5cm in height located at a distance of 30cm from the robot. Some robotic behaviours (as methods *look_A()* and *look_B()* from class `robot.py`) should be revised in case of any changes to the robot or the experimental setup.
 
 Printable images of the experiment mat and the marker are available for download and print. Although the table mat is not mandatory, it is recommended as it serves as a visual guide for both the pointers and the experimenters.
 Any kind of NAOmarker can be used in place of the one provided.
