@@ -13,7 +13,9 @@ In this experiment, a robot will interact with one or more informants in a stick
 
 # Video
 
-https://www.youtube.com/watch?v=ZBBtu1PkNCg
+![Video frame](https://i.ytimg.com/vi/Qh4XNIPODqI/hqdefault.jpg)
+
+https://youtu.be/Qh4XNIPODqI
 
 # Requirements
 
@@ -31,7 +33,7 @@ This software can operate in a simulated virtual environment, provided a camera 
 # Experimental Setup
 
 This module has been written for a SoftBank Pepper robot.
-The original experimental setup involved a table measuring 67.5cm in height located at a distance of 30cm from the robot. Some robotic behaviours (as methods *look_A()* and *look_B()* from class `robot.py`) should be revised in case of any changes to the robot or the experimental setup.
+The original experimental setup involved a table measuring 67.5 cm in height located at a distance of 30 cm from the robot. Some robotic behaviours (as methods *look_A()* and *look_B()* from class `robot.py`) should be revised in case of any changes to the robot or the experimental setup.
 
 Printable images of the experiment mat and the marker are available for download and print. Although the table mat is not mandatory, it is recommended as it serves as a visual guide for both the pointers and the experimenters.
 Any kind of NAOmarker can be used in place of the one provided.
